@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 def trim_mp3(file_input, time_start_ms, time_end_ms):
     audio = AudioSegment.from_file(file_input, format="mp3")
-    audio_trimmed = audio[time_start_ms:time_end_ms]
+    audio_trimmed = audio[time_start_ms:-time_end_ms]
     return audio_trimmed
 
 @app.route('/trim', methods=['POST'])
