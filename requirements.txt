@@ -1,4 +1,4 @@
 Gunicorn
-fastapi==0.73.0
-python-multipart
+Flask==2.2.5
+requests
 pydub
