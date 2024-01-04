@@ -16,8 +16,8 @@ def trim_audio():
             return jsonify({'error': 'No file part'}), 400
 
         file_input = request.files['file']
-        time_start_ms = int(request.json.get('time_start_ms', 0))
-        time_end_ms = int(request.json.get('time_end_ms', len(file_input)))
+        time_start_ms = int(request.form.get('time_start_ms', 0))
+        time_end_ms = int(request.form.get('time_end_ms', len(file_input)))
 
         # Create the trimmed audio in-memory
         audio_trimmed = trim_mp3(file_input, time_start_ms, time_end_ms)
