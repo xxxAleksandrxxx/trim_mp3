@@ -14,8 +14,14 @@ def trim_audio():
         # Check if the request contains a file
         if 'file' not in request.files:
             return jsonify({'error': 'No file part'}), 400
+        else:
+            print('file reseived!')
+        data = requests.json()
+        print('json got:', data)
 
         file_input = request.files['file']
+        print('file received', file_input)
+        
         time_start_ms = int(request.form.get('time_start_ms', 0))
         time_end_ms = int(request.form.get('time_end_ms', len(file_input)))
 
