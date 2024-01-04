@@ -11,6 +11,7 @@ def trim_mp3(file_input, time_start_ms, time_end_ms):
 @app.route('/trim', methods=['POST'])
 def trim_audio():
     try:
+        print('request.content:', request.content)
         # Check if the request contains a file
         if 'file' not in request.files:
             return jsonify({'error': 'No file part'}), 400
