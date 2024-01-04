@@ -16,7 +16,7 @@ def trim_audio():
             return jsonify({'error': 'No file part'}), 400
         else:
             print('file reseived!')
-        data = requests.json()
+        data = request.json()
         print('json got:', data)
 
         file_input = request.files['file']
